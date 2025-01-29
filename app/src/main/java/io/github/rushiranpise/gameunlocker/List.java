@@ -60,7 +60,8 @@ public class List {
         "jp.konami.pesam",
         // Additional games
         "com.ea.gp.fifamobile",
-        "com.tencent.tmgp.sgame"
+        "com.tencent.tmgp.sgame",
+        "com.garena.game.nfsm"
     };
 
     // Xiaomi Mi 11T Pro
