@@ -54,8 +54,6 @@ public class List {
 
     // OnePlus 9 Pro
     public static final String[] OP9PRO_PACKAGES = {
-        "com.epicgames.fortnite",
-        "com.epicgames.portal",
         "com.tencent.lolm",
         "jp.konami.pesam",
         // Additional games
@@ -108,6 +106,10 @@ public class List {
 
     // iQOO 11 Pro
     public static final String[] IQOO11PRO_PACKAGES = {
+        "com.epicgames.fortnite",
+        "com.epicgames.portal",
+        "flar2.devcheck",
+        "com.garena.game.nfsm",
         "com.tencent.KiHan",
         "com.tencent.tmgp.cf",
         "com.tencent.tmgp.cod",
@@ -124,23 +126,81 @@ public class List {
         public final String model;
         public final String brand;
         public final String device;
+        public final String marketname;
+        public final String socManufacturer;
+        public final String socModel;
+        public final int defaultFps;
+        public final String gpuModel;
+        public final String cpuModel;
 
-        public DeviceProps(String manufacturer, String model, String brand, String device) {
+        public DeviceProps(String manufacturer, String model, String brand, String device, 
+                        String marketname, String socManufacturer, String socModel, 
+                        int defaultFps, String gpuModel, String cpuModel) {
             this.manufacturer = manufacturer;
             this.model = model;
             this.brand = brand;
             this.device = device;
+            this.marketname = marketname;
+            this.socManufacturer = socManufacturer;
+            this.socModel = socModel;
+            this.defaultFps = defaultFps;
+            this.gpuModel = gpuModel;
+            this.cpuModel = cpuModel;
         }
     }
 
-    // Device Properties Map
-    public static final DeviceProps ROG6 = new DeviceProps("asus", "ASUS_AI2201", "asus", "AI2201");
-    public static final DeviceProps XPERIA5 = new DeviceProps("Sony", "SO-52A", "Sony", "SO-52A");
-    public static final DeviceProps OP8PRO = new DeviceProps("OnePlus", "IN2020", "OnePlus", "IN2020");
-    public static final DeviceProps OP9PRO = new DeviceProps("OnePlus", "LE2123", "OnePlus", "LE2123");
-    public static final DeviceProps MI11TPRO = new DeviceProps("Xiaomi", "2107113SI", "Xiaomi", "2107113SI");
-    public static final DeviceProps MI13PRO = new DeviceProps("Xiaomi", "2210132C", "Xiaomi", "2210132C");
-    public static final DeviceProps POCOF5 = new DeviceProps("Xiaomi", "23049PCD8G", "POCO", "23049PCD8G");
-    public static final DeviceProps BS4 = new DeviceProps("blackshark", "SHARK PAR-H0", "blackshark", "SHARK PAR-H0");
-    public static final DeviceProps IQOO11PRO = new DeviceProps("vivo", "V2243A", "iQOO", "V2243A");
+    // Device Properties dengan spesifikasi lengkap
+    public static final DeviceProps ROG6 = new DeviceProps(
+        "asus", "ASUS_AI2201", "asus", "AI2201",
+        "ROG Phone 6", "Qualcomm", "SM8475",
+        165, "Adreno 730", "Snapdragon 8+ Gen 1"
+    );
+
+    public static final DeviceProps XPERIA5 = new DeviceProps(
+        "Sony", "SO-52A", "Sony", "pdx223",
+        "Xperia 5 IV", "Qualcomm", "SM8450",
+        120, "Adreno 730", "Snapdragon 8 Gen 1"
+    );
+
+    public static final DeviceProps OP8PRO = new DeviceProps(
+        "OnePlus", "IN2020", "OnePlus", "IN2020",
+        "OnePlus 8 Pro", "Qualcomm", "SM8250",
+        120, "Adreno 650", "Snapdragon 865"
+    );
+
+    public static final DeviceProps OP9PRO = new DeviceProps(
+        "OnePlus", "LE2123", "OnePlus", "LE2123",
+        "OnePlus 9 Pro", "Qualcomm", "SM8350",
+        120, "Adreno 660", "Snapdragon 888"
+    );
+
+    public static final DeviceProps MI11TPRO = new DeviceProps(
+        "Xiaomi", "2107113SI", "Xiaomi", "vili",
+        "Mi 11T Pro", "Qualcomm", "SM8350",
+        120, "Adreno 660", "Snapdragon 888"
+    );
+
+    public static final DeviceProps MI13PRO = new DeviceProps(
+        "Xiaomi", "2210132C", "Xiaomi", "nuwa",
+        "Xiaomi 13 Pro", "Qualcomm", "SM8550-AB",
+        120, "Adreno 740", "Snapdragon 8 Gen 2"
+    );
+
+    public static final DeviceProps POCOF5 = new DeviceProps(
+        "Xiaomi", "23049PCD8G", "POCO", "marble",
+        "POCO F5", "Qualcomm", "SM7475-AB",
+        120, "Adreno 725", "Snapdragon 7+ Gen 2"
+    );
+
+    public static final DeviceProps BS4 = new DeviceProps(
+        "blackshark", "SHARK PAR-H0", "blackshark", "penrose",
+        "Black Shark 4", "Qualcomm", "SM8350",
+        144, "Adreno 660", "Snapdragon 888"
+    );
+
+    public static final DeviceProps IQOO11PRO = new DeviceProps(
+        "vivo", "V2243A", "iQOO", "V2243A",
+        "iQOO 11 Pro", "Qualcomm", "SM8550",
+        144, "Adreno 740", "Snapdragon 8 Gen 2"
+    );
 }
