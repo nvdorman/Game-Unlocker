@@ -20,3 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep class io.github.rushiranpise.gameunlocker.GAMEUNLOCKER
+-keep class io.github.rushiranpise.gameunlocker.List
