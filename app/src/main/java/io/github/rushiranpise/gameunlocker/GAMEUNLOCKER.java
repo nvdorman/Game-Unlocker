@@ -58,10 +58,47 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     }
 
     private void applyDeviceProps(List.DeviceProps props) {
+        // Base device properties
         setPropValue("MANUFACTURER", props.manufacturer);
         setPropValue("MODEL", props.model);
         setPropValue("BRAND", props.brand);
         setPropValue("DEVICE", props.device);
+        
+        // Extended properties for different partitions
+        String[] partitions = {"", "odm.", "product.", "system.", "system_ext.", "vendor."};
+        for (String partition : partitions) {
+            String prefix = "ro.product." + partition;
+            setPropValue(prefix + "brand", props.brand);
+            setPropValue(prefix + "device", props.device);
+            setPropValue(prefix + "manufacturer", props.manufacturer);
+            setPropValue(prefix + "model", props.model);
+            setPropValue(prefix + "marketname", props.marketname);
+        }
+        
+        // SoC properties
+        setPropValue("ro.soc.manufacturer", props.socManufacturer);
+        setPropValue("ro.soc.model", props.socModel);
+        
+        // FPS properties
+        setPropValue("sys.fps_unlock_allowed", String.valueOf(props.defaultFps));
+        setPropValue("ro.vendor.display.default_fps", String.valueOf(props.defaultFps));
+        setPropValue("ro.fps.capsmin", String.valueOf(props.defaultFps));
+        setPropValue("ro.fps.capsmax", String.valueOf(props.defaultFps));
+        
+        // GPU and CPU properties
+        setPropValue("ro.hardware.gpu", props.gpuModel);
+        setPropValue("ro.hardware.chipname", props.cpuModel);
+        
+        // FPS Stabilizer
+        setPropValue("debug.sf.showupdates", "0");
+        setPropValue("debug.sf.showcpu", "0");
+        setPropValue("debug.sf.showbackground", "0");
+        setPropValue("debug.sf.showfps", "0");
+        
+        // System Properties
+        setPropValue("cpu.fps", "auto");
+        setPropValue("gpu.fps", "auto");
+        setPropValue("ro.fps_enable", "0");
     }
 
     private static void setPropValue(String key, Object value) {
