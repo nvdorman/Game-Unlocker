@@ -150,7 +150,6 @@ public class List {
         }
     }
 
-<<<<<<< HEAD
     // Device Properties dengan spesifikasi lengkap
     public static final DeviceProps ROG6 = new DeviceProps(
         "asus", "ASUS_AI2201", "asus", "AI2201",
@@ -206,16 +205,3 @@ public class List {
         144, "Adreno 740", "Snapdragon 8 Gen 2"
     );
 }
-=======
-    // Device Properties Map
-    public static final DeviceProps ROG6 = new DeviceProps("asus", "ASUS_AI2201", "asus", "AI2201");
-    public static final DeviceProps XPERIA5 = new DeviceProps("Sony", "SO-52A", "Sony", "SO-52A");
-    public static final DeviceProps OP8PRO = new DeviceProps("OnePlus", "IN2020", "OnePlus", "IN2020");
-    public static final DeviceProps OP9PRO = new DeviceProps("OnePlus", "LE2123", "OnePlus", "LE2123");
-    public static final DeviceProps MI11TPRO = new DeviceProps("Xiaomi", "2107113SI", "Xiaomi", "2107113SI");
-    public static final DeviceProps MI13PRO = new DeviceProps("Xiaomi", "2210132C", "Xiaomi", "2210132C");
-    public static final DeviceProps POCOF5 = new DeviceProps("Xiaomi", "23049PCD8G", "POCO", "23049PCD8G");
-    public static final DeviceProps BS4 = new DeviceProps("blackshark", "SHARK PAR-H0", "blackshark", "SHARK PAR-H0");
-    public static final DeviceProps IQOO11PRO = new DeviceProps("vivo", "V2243A", "iQOO", "V2243A");
-}
->>>>>>> refs/remotes/origin/main
